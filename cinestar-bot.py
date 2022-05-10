@@ -8,6 +8,7 @@ from settings import SMTP_USER, SMTP_PASS, RECEIVERS
 # Location doesn't matter. Movies of the week are same everywhere
 URL = "https://www.cinestar.de/kino-bremen-kristall-palast/film-der-woche"
 
+
 class Movie:
     def __init__(self, movie_id, title, poster_url):
         self.movie_id = movie_id
@@ -66,8 +67,8 @@ def send_mail(movie: Movie, date: str, cover_file: str):
         subject="Film der Woche",
         receivers=RECEIVERS,
         html=f"""
-        <h1>{movie.title}</h1>
-        <h2>{date}</h2>
+        <h2>{movie.title}</h2>
+        <h3>{date}</h3>
         {{{{ my_image }}}}
     """,
         body_images={
