@@ -68,7 +68,7 @@ def send_mail(movie: Movie, date: str, cover_file: str):
         receivers=RECEIVERS,
         html=f"""
         <h2>{movie.title}</h2>
-        <h3>{date}</h3>
+        <h3>{date} - <a href="https://www.youtube.com/results?search_query={movie.title} Trailer German">Trailer</a></h3>
         {{{{ my_image }}}}
     """,
         body_images={
